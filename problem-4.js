@@ -1,4 +1,4 @@
-function calculatefinalscore(obj) {
+function calculateFinalScore(obj) {
     if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
     return 'Invalid Input';
     }
@@ -10,13 +10,13 @@ function calculatefinalscore(obj) {
         typeof testScore === 'number' && testScore <= 50 &&
         typeof schoolGrade === 'number' && schoolGrade <= 30 &&
         typeof isFFamily === 'boolean') {
-        let finalscore = testScore + schoolGrade;
-        if (isFFamily) {
-            finalscore += 20;
-        }
+            let finalscore = testScore + schoolGrade;
+            if (isFFamily) {
+            finalscore = finalscore + 20;
+            }
 
-        return finalscore >= 80;
-        }
+            return finalscore >= 80;
+            }
 
         else{
             return 'Invalid Input';
@@ -25,27 +25,25 @@ function calculatefinalscore(obj) {
 }
 
 
-
-
-console.log(calculatefinalscore({
+console.log(calculateFinalScore({
   name: "Rajib",
   testScore: 45,
   schoolGrade: 25,
   isFFamily: true
-})); // true
+}));
 
-console.log(calculatefinalscore({
+console.log(calculateFinalScore({
   name: "Rajib",
   testScore: 45,
   schoolGrade: 25,
   isFFamily: false
-})); // false
+}));
 
-console.log(calculatefinalscore("hello")); // "Invalid Input"
+console.log(calculateFinalScore("hello"));
 
-console.log(calculatefinalscore({
+console.log(calculateFinalScore({
   name: "Rajib",
   testScore: 15,
   schoolGrade: 25,
   isFFamily: true
-})); // false
+}));
